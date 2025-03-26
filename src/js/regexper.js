@@ -205,6 +205,20 @@ export default class Regexper {
     if (this.permalinkEnabled) {
       this.permalink.parentNode.style.display = null;
       this.permalink.href = location.toString();
+      // Add click handler to copy permalink to clipboard
+      this.permalink.onclick = (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(location.toString())
+          .then(() => {
+        // Optional: Show temporary feedback
+        const originalText = this.permalink.textContent;
+        this.permalink.textContent = '已复制!';
+        setTimeout(() => {
+          this.permalink.textContent = originalText;
+        }, 1000);
+          })
+          .catch(err => console.error('Failed to copy:', err));
+      };
     } else {
       classes.push('hide-permalink');
     }

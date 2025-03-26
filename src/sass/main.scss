@@ -1,12 +1,13 @@
 @use "base";
 @use 'reset';
 @use 'sass:math';
+@use 'sass:color';
 
 body {
   font-family: sans-serif;
   font-size: base.$base-font-size;
   line-height:base.$base-line-height;
-  background: base.$gray;
+  background: base.$light-gray;
   margin-bottom: base.rhythm(1);
 }
 
@@ -66,7 +67,7 @@ header {
 
   .logo {
     display: inline-block;
-
+    margin-right: 50px;
     span {
       color: base.$gray;
     }
@@ -237,11 +238,13 @@ header {
       border: 0 none;
       outline: none;
       background: base.$tan;
-      padding: 0 0.5em;
+      padding: 1em;
+      min-height: 5rem;
       margin-bottom: 0.25em;
       width: 100% !important; // "!important" prevents user changing width
       box-sizing: border-box;
       font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+      border-radius: 5px;
 
       @include base.input-placeholder {
         color: base.$gray;
@@ -250,12 +253,17 @@ header {
 
     button {
       @include base.adjust-font-size-to(base.$base-font-size);
-      width: 100px;
+      min-width: 150px;
       border: 0 none;
       background: base.$green;
       background: linear-gradient(to bottom, base.$green 0%, base.$dark-green 100%);
+      border-radius: 5px;
+      padding: base.rhythm(1/4);
       float: left;
       cursor: pointer;
+    }
+    button:hover{
+      background: linear-gradient(to bottom, darken(base.$green, 10%) 0%, darken(base.$dark-green, 10%) 100%);
     }
 
     ul {
