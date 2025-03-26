@@ -1,33 +1,44 @@
-# Regexper
+# Regexper-CHS
 
-Code for the http://regexper.com/ site.
+本仓库是[原网站](http://regexper.com/)源码的中文翻译版本  
+原仓库地址👉：https://gitlab.com/javallone/regexper-static.git  
 
-## Contributing
+This repo is the simplified chinese translation verion of original [website](http://regexper.com/)'s source code.  
+[Original repo 👈](https://gitlab.com/javallone/regexper-static.git)
 
-I greatly appreciate any contributions that you may have for the site. Feel free to fork the project and work on any of the reported issues, or let me know about any improvements you think would be beneficial.
 
-When sending pull requests, please keep them focused on a single issue. I would rather deal with a dozen pull requests for a dozen issues with one change each over one pull request fixing a dozen issues. Also, I appreciate tests to be included with feature development, but for minor changes I will probably not put up much of a fuss if they're missing.
+### 说明
 
-### Working with the code
+原网站使用的依赖已年久失修，并有部分库已被废弃甚至删除，如 `doccoToc` 使用的是其他人制作的镜像版本，非官方版本，如若介意请勿构建
 
-Node is required for working with this site.
+## 安装与构建
 
-To start with, install the necessary dependencies:
+包管理器沿用原项目的 `yarn`
+``` bash
+yarn install
+```
+启动项目：
+``` bash
+yarn start
+```
+项目将启动在端口 8080 上
 
-    $ yarn install
+其他命令：  
 
-To start a development server, run:
-
-    $ yarn start
-
-This will build the site into the ./build directory, start a local start on port 8080, and begin watching the source files for modifications. The site will automatically be rebuilt when files are changed. Also, if you browser has the LiveReload extension, then the page will be reloaded.
-
-These other gulp tasks are available:
-
-    $ yarn docs # Build documentation into the ./docs directory
-    $ yarn build # Build the site into the ./build directory
-    $ yarn test # Run JSCS lint and Karma tests
-
+生成文档（待修复）：
+``` bash
+yarn docs
+```
+打包：
+``` bash
+yarn build
+```
+测试：
+``` bash
+yarn build
+```
 ## License
 
-See [LICENSE.txt](/LICENSE.txt) file for licensing details.
+fork同样遵循MIT lincense   
+**注意** 这并不意味着您可以拿本项目进行任何违反当地国家法律的用途  
+原项目LICENSE 👉 [LICENSE.txt](/LICENSE.txt)
