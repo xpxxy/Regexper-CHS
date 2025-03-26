@@ -1,21 +1,22 @@
-@import 'base';
-@import 'reset';
+@use "base";
+@use 'reset';
+@use 'sass:math';
 
 body {
   font-family: sans-serif;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  background: $gray;
-  margin-bottom: rhythm(1);
+  font-size: base.$base-font-size;
+  line-height:base.$base-line-height;
+  background: base.$gray;
+  margin-bottom: base.rhythm(1);
 }
 
 a {
-  color: $black;
+  color: base.$black;
 }
 
 .inline-icon {
   svg {
-    margin-right: rhythm(1/4);
+    margin-right: base.rhythm(1/4);
     width: 1em;
     height: 1em;
     vertical-align: middle;
@@ -24,12 +25,12 @@ a {
 }
 
 h1 {
-  @include adjust-font-size-to(48px, 2);
+  @include base.adjust-font-size-to(48px, 2);
 }
 
 ul.inline-list {
-  @include adjust-font-size-to(14px, 2/3);
-  @include clearfix;
+  @include base.adjust-font-size-to(14px, math.div(2,3));
+  // @include base.clearfix;
 
   li {
     list-style-type: none;
@@ -38,7 +39,7 @@ ul.inline-list {
 
     &::after {
       content: '//';
-      padding: 0 rhythm(1/4);
+      padding: 0 base.rhythm(1/4);
     }
 
     &:last-child::after {
@@ -57,17 +58,17 @@ ul.inline-list {
 }
 
 header {
-  background: $green;
-  background: linear-gradient(to bottom, $green 0%, $dark-green 100%);
-  padding: rhythm(1);
-  @include box-shadow;
-  @include clearfix;
+  background: base.$green;
+  background: linear-gradient(to bottom, base.$green 0%, base.$dark-green 100%);
+  padding: base.rhythm(1);
+  @include base.box-shadow;
+  // @include base.clearfix;
 
   .logo {
     display: inline-block;
 
     span {
-      color: $gray;
+      color: base.$gray;
     }
   }
 
@@ -76,10 +77,10 @@ header {
   }
 
   nav {
-    @include adjust-font-size-to(18px, 1);
+    @include base.adjust-font-size-to(18px, 1);
     display: inline-block;
-    margin-left: rhythm(1/4);
-    padding-left: rhythm(1/4);
+    margin-left: base.rhythm(1/4);
+    padding-left: base.rhythm(1/4);
   }
 
   a {
@@ -92,12 +93,12 @@ header {
 }
 
 #content {
-  padding: rhythm(1);
+  padding: base.rhythm(1);
   display: block;
 
   .copy {
-    background-color: $tan;
-    padding: rhythm(1/2);
+    background-color: base.$tan;
+    padding: base.rhythm(1/2);
   }
 
   .changelog {
@@ -109,7 +110,7 @@ header {
       &::before {
         content: '\00BB';
         font-weight: bold;
-        margin-right: rhythm(1/2);
+        margin-right: base.rhythm(1/2);
       }
     }
   }
@@ -118,21 +119,21 @@ header {
     overflow: hidden;
 
     h1 {
-      @include adjust-font-size-to($base-font-size * 2);
+      @include base.adjust-font-size-to(base.$base-font-size * 2);
       font-weight: bold;
       float: left;
     }
 
     blockquote {
-      background-color: $green;
+      background-color: base.$green;
       position: relative;
-      padding: rhythm(1);
-      display: inline-block;
+      padding: base.rhythm(1);
+      // display: inline-block;
       font-style: italic;
       float: right;
 
       &::before {
-        @include adjust-font-size-to($base-font-size * 4);
+        @include base.adjust-font-size-to(base.$base-font-size * 4);
         content: '\201c';
         position: absolute;
         left: 0;
@@ -141,7 +142,7 @@ header {
       }
 
       &::after {
-        @include adjust-font-size-to($base-font-size * 4);
+        @include base.adjust-font-size-to(base.$base-font-size * 4);
         content: '\201d';
         position: absolute;
         right: 0;
@@ -157,22 +158,22 @@ header {
 
   .documentation {
     h1 {
-      @include adjust-font-size-to($base-font-size * 2);
+      @include base.adjust-font-size-to(base.$base-font-size * 2);
       font-weight: bold;
     }
 
     h2 {
-      @include adjust-font-size-to($base-font-size);
+      @include base.adjust-font-size-to(base.$base-font-size);
       font-weight: bold;
     }
 
     h3 {
-      @include adjust-font-size-to($base-font-size);
+      @include base.adjust-font-size-to(base.$base-font-size);
 
       &::before {
         content: '\00BB';
         font-weight: bold;
-        margin-right: rhythm(1/4);
+        margin-right: base.rhythm(1/4);
       }
     }
 
@@ -181,32 +182,32 @@ header {
     }
 
     h2, h3 {
-      margin-bottom: rhythm(1);
+      margin-bottom: base.rhythm(1);
     }
 
     section, div.section {
-      margin: rhythm(1) 0;
+      margin: base.rhythm(1) 0;
       overflow: hidden;
     }
 
     p {
-      margin: rhythm(1) 0;
+      margin: base.rhythm(1) 0;
     }
 
     figure {
       line-height: 0;
-      background: $white;
-      margin: rhythm(1/4);
-      @include box-shadow;
+      background: base.$white;
+      margin: base.rhythm(1/4);
+      @include base.box-shadow;
 
       &.shift-right {
         float: right;
-        margin-left: rhythm(1/2);
+        margin-left: base.rhythm(1/2);
       }
 
       &.shift-left {
         float: left;
-        margin-right: rhythm(1/2);
+        margin-right: base.rhythm(1/2);
       }
 
       .svg {
@@ -215,44 +216,44 @@ header {
       }
 
       figcaption {
-        @include adjust-font-size-to($base-font-size);
-        background: $green;
+        @include base.adjust-font-size-to(base.$base-font-size);
+        background: base.$green;
         font-weight: bold;
-        padding: 0 rhythm(1/4);
+        padding: 0 base.rhythm(1/4);
       }
     }
   }
 
   .application {
     position: relative;
-    @include clearfix;
+    // @include base.clearfix;
 
     form {
       overflow: hidden;
     }
 
     textarea {
-      @include adjust-font-size-to($base-font-size);
+      @include base.adjust-font-size-to(base.$base-font-size);
       border: 0 none;
       outline: none;
-      background: $tan;
+      background: base.$tan;
       padding: 0 0.5em;
       margin-bottom: 0.25em;
       width: 100% !important; // "!important" prevents user changing width
       box-sizing: border-box;
       font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
 
-      @include input-placeholder {
-        color: $gray;
+      @include base.input-placeholder {
+        color: base.$gray;
       }
     }
 
     button {
-      @include adjust-font-size-to($base-font-size);
+      @include base.adjust-font-size-to(base.$base-font-size);
       width: 100px;
       border: 0 none;
-      background: $green;
-      background: linear-gradient(to bottom, $green 0%, $dark-green 100%);
+      background: base.$green;
+      background: linear-gradient(to bottom, base.$green 0%, base.$dark-green 100%);
       float: left;
       cursor: pointer;
     }
@@ -279,7 +280,7 @@ header {
   }
 
   .results {
-    margin-top: rhythm(1);
+    margin-top: base.rhythm(1);
     display: none;
 
     body.has-results &, body.has-error &, body.is-loading & {
@@ -290,15 +291,15 @@ header {
 
 .progress {
   width: 50%;
-  height: rhythm(1/2);
-  border: 1px solid $dark-green;
+  height: base.rhythm(1/2);
+  border: 1px solid base.$dark-green;
   overflow: hidden;
-  margin: rhythm(1) auto;
+  margin: base.rhythm(1) auto;
 
   div {
-    background: $green;
-    background: linear-gradient(135deg, $green 25%, $light-green 25%, $light-green 50%, $green 50%, $green 75%, $light-green 75%, $light-green 100%);
-    background-size: rhythm(2) rhythm(2);
+    background: base.$green;
+    background: linear-gradient(135deg, base.$green 25%, base.$light-green 25%, base.$light-green 50%, base.$green 50%, base.$green 75%, base.$light-green 75%, base.$light-green 100%);
+    background-size: base.rhythm(2) base.rhythm(2);
     background-repeat: repeat-x;
     height: 100%;
     animation: progress 1s infinite linear
@@ -306,13 +307,13 @@ header {
 }
 
 @keyframes progress {
-  0% { background-position-x: rhythm(2); }
+  0% { background-position-x: base.rhythm(2); }
   100% { background-position-x: 0; }
 }
 
 #error {
-  background: $red;
-  color: $white;
+  background: base.$red;
+  color: base.$white;
   padding: 0 0.5em;
   white-space: pre;
   font-family: monospace;
@@ -326,13 +327,13 @@ header {
 }
 
 #warnings {
-  @include adjust-font-size-to($base-font-size, 1);
+  @include base.adjust-font-size-to(base.$base-font-size, 1);
   font-weight: bold;
-  background-color: $yellow;
+  background-color: base.$yellow;
   display: none;
 
   li {
-    margin: rhythm(1/4);
+    margin: base.rhythm(1/4);
   }
 
   body.has-results & {
@@ -341,7 +342,7 @@ header {
 }
 
 #regexp-render {
-  background: $white;
+  background: base.$white;
   width: 100%;
   overflow: auto;
   text-align: center;
@@ -363,7 +364,7 @@ header {
 }
 
 footer {
-  padding: 0 rhythm(1);
+  padding: 0 base.rhythm(1);
 
   img {
     vertical-align: middle;

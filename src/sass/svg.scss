@@ -1,7 +1,7 @@
-@import 'base';
+@use 'base';
 
 svg {
-  background-color: $white;
+  background-color: base.$white;
 }
 
 .root text,
@@ -12,37 +12,37 @@ svg {
 .root path {
   fill-opacity: 0;
   stroke-width: 2px;
-  stroke: $black;
+  stroke: base.$black;
 }
 
 .root circle {
-  fill: $gray;
+  fill: base.$gray;
   stroke-width: 2px;
-  stroke: $black;
+  stroke: base.$black;
 }
 
 .anchor text, .any-character text {
-  fill: $white;
+  fill: base.$white;
 }
 
 .anchor rect, .any-character rect {
-  fill: $gray;
+  fill: base.$gray;
 }
 
 .escape text, .charset-escape text, .literal text {
-  fill: $black;
+  fill: base.$black;
 }
 
 .escape rect, .charset-escape rect {
-  fill: $green;
+  fill: base.$green;
 }
 
 .literal rect {
-  fill: $blue;
+  fill: base.$blue;
 }
 
 .charset .charset-box {
-  fill: $tan;
+  fill: base.$tan;
 }
 
 .subexp .subexp-label tspan,
@@ -61,12 +61,12 @@ svg {
 }
 
 .subexp .subexp-box {
-  stroke: $light-gray;
+  stroke: base.$light-gray;
   stroke-dasharray: 6,2;
   stroke-width: 2px;
   fill-opacity: 0;
 }
 
 .quote {
-  fill: $light-gray;
+  fill: base.$light-gray;
 }
