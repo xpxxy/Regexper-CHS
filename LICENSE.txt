@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+CHS-Version Copyright (c) 2025 lvzhaoxuan(xpxxy)
 Copyright (c) 2014 Jeffrey Avallone
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
