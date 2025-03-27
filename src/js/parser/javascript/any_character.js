@@ -5,6 +5,6 @@ export default {
   type: 'any-character',
 
   _render() {
-    return this.renderLabel('any character');
+    return this.renderLabel('任意字符');
   }
 };

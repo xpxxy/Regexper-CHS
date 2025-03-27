@@ -63,7 +63,7 @@ export default {
     // reference by the control charater escape, others match "\", "c", or "@",
     // and some do not appear to match anything.
     if (this.textValue.match(/\\c[^a-zA-Z]/)) {
-      this.state.warnings.push(`The character set "${this.textValue}" contains the \\c escape followed by a character other than A-Z. This can lead to different behavior depending on browser. The representation here is the most common interpretation.`);
+      this.state.warnings.push(`字符集 "${this.textValue}" 包含 \\c 转义符后跟随了非A-Z字符。这在不同浏览器中可能会有不同的行为。这里展示的是最常见的解释。`);
     }
   }
 };

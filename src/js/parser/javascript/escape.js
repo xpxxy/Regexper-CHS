@@ -47,37 +47,37 @@ export default {
   },
 
   // Escape code mappings
-  b: ['word boundary', -1, false],
-  B: ['non-word boundary', -1, false],
-  d: ['digit', -1, false],
-  D: ['non-digit', -1, false],
-  f: ['form feed', 0x0c, true],
-  n: ['line feed', 0x0a, true],
-  r: ['carriage return', 0x0d, true],
-  s: ['white space', -1, false],
-  S: ['non-white space', -1, false],
-  t: ['tab', 0x09, true],
-  v: ['vertical tab', 0x0b, true],
-  w: ['word', -1, false],
-  W: ['non-word', -1, false],
-  1: ['Back reference (group = 1)', -1, false],
-  2: ['Back reference (group = 2)', -1, false],
-  3: ['Back reference (group = 3)', -1, false],
-  4: ['Back reference (group = 4)', -1, false],
-  5: ['Back reference (group = 5)', -1, false],
-  6: ['Back reference (group = 6)', -1, false],
-  7: ['Back reference (group = 7)', -1, false],
-  8: ['Back reference (group = 8)', -1, false],
-  9: ['Back reference (group = 9)', -1, false],
+  b: ['词边界', -1, false],
+  B: ['非词边界', -1, false],
+  d: ['数字', -1, false],
+  D: ['非数字', -1, false],
+  f: ['换页符', 0x0c, true],
+  n: ['换行符', 0x0a, true],
+  r: ['回车符', 0x0d, true],
+  s: ['空白字符', -1, false],
+  S: ['非空白字符', -1, false],
+  t: ['制表符', 0x09, true],
+  v: ['垂直制表符', 0x0b, true],
+  w: ['单词字符', -1, false],
+  W: ['非单词字符', -1, false],
+  1: ['向后引用 (组 = 1)', -1, false],
+  2: ['向后引用 (组 = 2)', -1, false],
+  3: ['向后引用 (组 = 3)', -1, false],
+  4: ['向后引用 (组 = 4)', -1, false],
+  5: ['向后引用 (组 = 5)', -1, false],
+  6: ['向后引用 (组 = 6)', -1, false],
+  7: ['向后引用 (组 = 7)', -1, false],
+  8: ['向后引用 (组 = 8)', -1, false],
+  9: ['向后引用 (组 = 9)', -1, false],
   0: function() {
     if (this.arg) {
-      return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
+      return [`八进制: ${this.arg}`, parseInt(this.arg, 8), true];
     } else {
-      return ['null', 0, true];
+      return ['空字符', 0, true];
     }
   },
   c() {
-    return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, true];
+    return [`控制字符-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, true];
   },
   x() {
     return [`0x${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
