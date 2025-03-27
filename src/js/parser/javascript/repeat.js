@@ -6,7 +6,7 @@ function formatTimes(times) {
   if (times === 1) {
     return 'once';
   } else {
-    return `${times} times`;
+    return `${times} 次`;
   }
 }
 
