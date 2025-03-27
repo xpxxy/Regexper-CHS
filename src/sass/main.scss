@@ -17,7 +17,7 @@ a {
 
 .inline-icon {
   svg {
-    margin-right: base.rhythm(1/4);
+    margin-right: base.rhythm(math.div(1, 4));
     width: 1em;
     height: 1em;
     vertical-align: middle;
@@ -40,7 +40,7 @@ ul.inline-list {
 
     &::after {
       content: '//';
-      padding: 0 base.rhythm(1/4);
+      padding: 0 base.rhythm(math.div(1, 4));
     }
 
     &:last-child::after {
@@ -80,8 +80,8 @@ header {
   nav {
     @include base.adjust-font-size-to(18px, 1);
     display: inline-block;
-    margin-left: base.rhythm(1/4);
-    padding-left: base.rhythm(1/4);
+    margin-left: base.rhythm(math.div(1, 4));
+    padding-left: base.rhythm(math.div(1, 4));
   }
 
   a {
@@ -99,7 +99,7 @@ header {
 
   .copy {
     background-color: base.$tan;
-    padding: base.rhythm(1/2);
+    padding: base.rhythm(math.div(1, 2));
   }
 
   .changelog {
@@ -111,7 +111,7 @@ header {
       &::before {
         content: '\00BB';
         font-weight: bold;
-        margin-right: base.rhythm(1/2);
+        margin-right: base.rhythm(math.div(1, 2));
       }
     }
   }
@@ -174,7 +174,7 @@ header {
       &::before {
         content: '\00BB';
         font-weight: bold;
-        margin-right: base.rhythm(1/4);
+        margin-right: base.rhythm(math.div(1, 4));
       }
     }
 
@@ -198,17 +198,17 @@ header {
     figure {
       line-height: 0;
       background: base.$white;
-      margin: base.rhythm(1/4);
+      margin: base.rhythm(math.div(1, 4));
       @include base.box-shadow;
 
       &.shift-right {
         float: right;
-        margin-left: base.rhythm(1/2);
+        margin-left: base.rhythm(math.div(1, 2));
       }
 
       &.shift-left {
         float: left;
-        margin-right: base.rhythm(1/2);
+        margin-right: base.rhythm(math.div(1, 2));
       }
 
       .svg {
@@ -220,7 +220,7 @@ header {
         @include base.adjust-font-size-to(base.$base-font-size);
         background: base.$green;
         font-weight: bold;
-        padding: 0 base.rhythm(1/4);
+        padding: 0 base.rhythm(math.div(1, 4));
       }
     }
   }
@@ -258,12 +258,12 @@ header {
       background: base.$green;
       background: linear-gradient(to bottom, base.$green 0%, base.$dark-green 100%);
       border-radius: 5px;
-      padding: base.rhythm(1/4);
+      padding: base.rhythm(math.div(1, 4));
       float: left;
       cursor: pointer;
     }
     button:hover{
-      background: linear-gradient(to bottom, darken(base.$green, 10%) 0%, darken(base.$dark-green, 10%) 100%);
+      background: linear-gradient(to bottom, color.scale(base.$green, $lightness: 10%) 0%, color.scale(base.$dark-green,  $lightness: 10%) 100%);
     }
 
     ul {
@@ -299,7 +299,7 @@ header {
 
 .progress {
   width: 50%;
-  height: base.rhythm(1/2);
+  height: base.rhythm(math.div(1, 2));
   border: 1px solid base.$dark-green;
   overflow: hidden;
   margin: base.rhythm(1) auto;
@@ -341,7 +341,7 @@ header {
   display: none;
 
   li {
-    margin: base.rhythm(1/4);
+    margin: base.rhythm(math.div(1, 4));
   }
 
   body.has-results & {
