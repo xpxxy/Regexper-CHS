@@ -1,10 +1,13 @@
 # Regexper-CHS
 
 ##### Original Reporitory  
-![GitHub stars](https://img.shields.io/github/stars/javallone/regexper-static.svg) ![GitHub forks](https://img.shields.io/github/forks/javallone/regexper-static.svg) ![GitLab stars](https://img.shields.io/gitlab/stars/javallone/regexper-static.svg) ![GitLab forks](https://img.shields.io/gitlab/forks/javallone/regexper-static.svg)  
+[![GitHub stars](https://img.shields.io/github/stars/javallone/regexper-static.svg)](https://github.com/javallone/regexper-static/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/javallone/regexper-static.svg)](https://github.com/javallone/regexper-static/forks)
+[![GitLab stars](https://img.shields.io/gitlab/stars/javallone/regexper-static.svg)](https://gitlab.com/javallone/regexper-static/-/starrers)
 ---
 ##### CHS Reporitory  
-![GitHub stars](https://img.shields.io/github/stars/xpxxy/regexper-chs.svg)  ![GitHub forks](https://img.shields.io/github/forks/xpxxy/regexper-chs.svg) 
+[![GitHub stars](https://img.shields.io/github/stars/xpxxy/regexper-chs.svg)](https://github.com/xpxxy/Regexper-CHS/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xpxxy/regexper-chs.svg)](https://github.com/xpxxy/Regexper-CHS/forks)
 ---
 
 本仓库是[原网站](http://regexper.com/)的中文翻译版本  
