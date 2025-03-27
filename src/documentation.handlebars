@@ -72,64 +72,66 @@
     <section>
       <h2>量词（Quantifiers）</h2>
 
-      <p>量词用于指定表达式的某部分是否应重复匹配或作为可选匹配。在正则表达式图示中，量词的表示方式与**选择分支（Alternation）**类似，路径会分叉并可能形成循环（即回退到自身）。
+      <p>量词用于指定表达式的某部分是否应重复匹配或作为可选匹配。在正则表达式图示中，量词的表示方式与<span class="text-bold">选择分支（Alternation）</span>类似，路径会分叉并可能形成循环（即回退到自身）。
 
 除非路径上有箭头明确指示方向，否则默认优先选择直行路径（即非贪婪匹配）。</p>
 
       <div class="section">
-        <h3>Zero-or-more</h3>
+        <h3>零次或多次量词（Zero-or-more Quantifier）</h3>
 
         <figure class="shift-left" data-expr="(?:greedy)*">
-          <figcaption>Greedy quantifier</figcaption>
+          <figcaption>贪婪量词</figcaption>
         </figure>
 
         <figure class="shift-left" data-expr="(?:non-greedy)*?">
-          <figcaption>Non-greedy quantifier</figcaption>
+          <figcaption>非贪婪量词</figcaption>
         </figure>
 
-        <p>The zero-or-more quantifier matches any number of repetitions of the pattern.</p>
+        <p>零次或多次量词（Zero-or-more Quantifier），该量词（符号：*）会匹配<span class="text-bold">任意次数（包括零次）</span>的重复模式。</p>
+        
+        <p>译注：该量词是正则表达式中通用性最强的重复匹配工具，但需注意其贪婪性可能导致的性能问题（如回溯过多）</p>
       </div>
 
       <div class="section">
-        <h3>Required</h3>
+        <h3>必需量词（Required Quantifier）</h3>
 
         <figure class="shift-left" data-expr="(?:greedy)+">
-          <figcaption>Greedy quantifier</figcaption>
+          <figcaption>贪婪量词</figcaption>
         </figure>
 
         <figure class="shift-left" data-expr="(?:non-greedy)+?">
-          <figcaption>Non-greedy quantifier</figcaption>
+          <figcaption>非贪婪量词</figcaption>
         </figure>
 
-        <p>The required quantifier matches one or more repetitions of the pattern. Note that it does not have the path that allows the pattern to be skipped like the zero-or-more quantifier.</p>
+        <p>必需量词（Required Quantifier），该量词（符号：+）会匹配至少一次或多次的重复模式。与零次或多次量词（*）不同，它<span style="color:red">不允许</span>跳过匹配——模式必须至少出现一次才能成功。</p>
       </div>
 
       <div class="section">
-        <h3>Optional</h3>
+        <h3>可选量词（Optional Quantifier）</h3>
 
         <figure class="shift-left" data-expr="(?:greedy)?">
-          <figcaption>Greedy quantifier</figcaption>
+          <figcaption>贪婪量词</figcaption>
         </figure>
 
         <figure class="shift-left" data-expr="(?:non-greedy)??">
-          <figcaption>Non-greedy quantifier</figcaption>
+          <figcaption>非贪婪量词</figcaption>
         </figure>
 
-        <p>The optional quantifier matches the pattern at most once. Note that it does not have the path that allows the pattern to loop back on itself like the zero-or-more or required quantifiers.</p>
+        <p>可选量词（Optional Quantifier），该量词（符号：?）会匹配零次或一次的重复模式，且不允许循环匹配（即不能重复多次）</p>
       </div>
 
       <div class="section">
-        <h3>Range</h3>
+        <h3>范围量词（Range Quantifier）</h3>
 
         <figure class="shift-left" data-expr="(?:greedy){5,10}">
-          <figcaption>Greedy quantifier</figcaption>
+          <figcaption>贪婪量词</figcaption>
         </figure>
 
         <figure class="shift-left" data-expr="(?:non-greedy){5,10}?">
-          <figcaption>Non-greedy quantifier</figcaption>
+          <figcaption>非贪婪量词</figcaption>
         </figure>
 
-        <p>The ranged quantifier specifies a number of times the pattern may be repeated. The two examples provided here both have a range of "{5,10}", the label for the looping branch indicates the number of times that branch may be followed. The values are one less than specified in the expression since the pattern would have to be matched once before repeating it is an option. So, for these examples, the pattern would be matched once and then the loop would be followed 4 to 9 times, for a total of 5 to 10 matches of the pattern.</p>
+        <p>范围量词（Range Quantifier）该量词（符号：{min, max}）用于指定匹配模式可以重复的次数。这里提供的两个示例范围都是"{5,10}"，循环分支上的标签表示该分支可以被循环的次数。这些数值比表达式中指定的少1，因为模式必须先匹配一次，然后才能选择是否重复。因此，对于这些示例，模式会先匹配1次，然后循环跟随4到9次，最终实现模式总共匹配5到10次。</p>
       </div>
     </section>
   </section>
