@@ -1,5 +1,11 @@
 [
   {
+    "label": "April 7, 2025 Release",
+    "changes": [
+      "Updating Simplfied Chinese translation"
+    ]
+  },
+  {
     "label": "September 5, 2020 Release",
     "changes": [
       "Updating build system to use only webpack.",
