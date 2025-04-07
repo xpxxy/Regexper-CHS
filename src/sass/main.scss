@@ -118,7 +118,7 @@ header {
 
   .error {
     overflow: hidden;
-
+    border-radius: 5px;
     h1 {
       @include base.adjust-font-size-to(base.$base-font-size * 2);
       font-weight: bold;
@@ -132,9 +132,10 @@ header {
       // display: inline-block;
       font-style: italic;
       float: right;
+      border-radius: 5px;
 
       &::before {
-        @include base.adjust-font-size-to(base.$base-font-size * 4);
+        @include base.adjust-font-size-to(base.$base-font-size * 2);
         content: '\201c';
         position: absolute;
         left: 0;
@@ -143,7 +144,7 @@ header {
       }
 
       &::after {
-        @include base.adjust-font-size-to(base.$base-font-size * 4);
+        @include base.adjust-font-size-to(base.$base-font-size * 2);
         content: '\201d';
         position: absolute;
         right: 0;
@@ -328,6 +329,7 @@ header {
   font-weight: bold;
   display: none;
   overflow-x: auto;
+  border-radius: 5px;
 
   body.has-error & {
     display: block;
